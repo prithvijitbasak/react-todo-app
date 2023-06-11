@@ -1,45 +1,47 @@
-import React from 'react';
-import './App.css'
+import React, { useState } from "react";
+import "./App.css";
 
 const App = () => {
+  const [inputList, setInputList] = useState("");
+  const [items, setItems] = useState([]);
+
+  const inputEvent = (event) => {
+    setInputList(event.target.value);
+  };
+
+  const listOfItems = () => {
+    setItems((oldItems) => {
+      return [...oldItems, inputList];
+    });
+
+    setInputList("");
+  };
+
   return (
     <>
       <div className="header">
         Add items
         <br />
-        <input type="text" className='input-field'/>
-        <button className='add-btn'>+</button>
+        <input
+          type="text"
+          className="input-field"
+          onChange={inputEvent}
+          value={inputList}
+        />
+        <button className="add-btn" onClick={listOfItems}>
+          +
+        </button>
+        <ol className="items-list">
+          {items.map((itemsValue) => {
+            return <li>{itemsValue}</li>;
+          })}
+        </ol>
       </div>
-      
     </>
-  )
-}
+  );
+};
 
-export default App
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default App;
 
 // import logo from './logo.svg';
 // import './App.css';

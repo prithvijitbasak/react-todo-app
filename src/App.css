@@ -39,8 +39,33 @@
   transform: scale(.90);
 }
 
+.items-list {
+  color: black;
+}
 
+.list-elements {
+  margin: 10px 0;
+}
 
+.items-btn {
+  padding: 12px 15px;
+  margin: 0 10px;
+  border-radius: 50%;
+  border-style: none;
+  background-color: rgb(226, 85, 85);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.items-btn:hover {
+  transform: scale(1.10);
+}
+
+.items-btn:active {
+  transform: scale(0.8);
+}
 
 
 
